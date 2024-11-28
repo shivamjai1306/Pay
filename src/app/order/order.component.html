@@ -1,0 +1,43 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Centre Shop</title>
+
+</head>
+<body>
+  <header>
+    <h1>Welcome to Food Centre</h1>
+  </header>
+  <main>
+    <section class="form-container">
+     <form [formGroup]="form">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter product name" [formControl]="name">
+    <h4 [hidden]="name.valid || name.untouched ">Enter your product</h4>
+    
+    <label for="quantity">Quantity:</label>
+    <input type="number"  [formControl]="quantity" placeholder="Enter quantity" min="1">
+    <h4 [hidden]="quantity.valid || quantity.untouched ">Enter valid Quantity</h4>
+
+    
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price"  placeholder="Enter price" [formControl]="price"
+    min="1">
+    <h4 [hidden]="price.valid || price.untouched ">Enter valid Price</h4>
+    
+  
+    <button (click)="submit()" id="btn">Submit</button>
+</form> 
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Food Centre. All rights reserved.</p>
+  </footer>
+</body>
+</html>
